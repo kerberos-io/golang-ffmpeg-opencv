@@ -1,10 +1,5 @@
 FROM golang:1.18.0-stretch AS builder
 
-ARG gitlab_id
-ARG gitlab_token
-
-WORKDIR /build
-
 # Compile FFMPEG + x264
 RUN apt-get update && apt-get upgrade -y && apt-get -y --no-install-recommends install git cmake wget dh-autoreconf autotools-dev autoconf automake gcc build-essential libtool make ca-certificates supervisor nasm zlib1g-dev tar libx264. unzip wget pkg-config libavresample-dev && \
     git clone https://github.com/FFmpeg/FFmpeg && \
